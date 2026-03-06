@@ -14,6 +14,8 @@ Implementable architecture patterns organized by category with code templates, c
 
 ### Turborepo Configuration [P0]
 
+**Example:** `examples/monorepo/turborepo-config/`
+
 ```json
 // turbo.json
 {
@@ -100,6 +102,8 @@ npx nx graph                                    # Visualize dependency graph
 
 ### pnpm Workspaces [P0]
 
+**Example:** `examples/monorepo/pnpm-workspaces/`
+
 ```yaml
 # pnpm-workspace.yaml
 packages:
@@ -133,6 +137,8 @@ pnpm -r --parallel dev
 ## 2. Project Structure
 
 ### Feature-Based Layout [P0]
+
+**Example:** `examples/structure/feature-based/`
 
 ```
 src/
@@ -251,6 +257,8 @@ const userService = container.resolve<UserService>('userService');
 
 ### Repository Pattern [P1]
 
+**Example:** `examples/patterns/repository/`
+
 ```ts
 // types/repository.ts
 interface Repository<T, ID = string> {
@@ -293,6 +301,8 @@ class PrismaUserRepository implements Repository<User> {
 ```
 
 ### Service Layer [P1]
+
+**Example:** `examples/patterns/service-layer/`
 
 ```ts
 // services/order.service.ts
@@ -657,6 +667,8 @@ export async function POST(request: Request) {
 
 ### Event Bus [P1]
 
+**Example:** `examples/patterns/event-bus/`
+
 ```ts
 // events/event-bus.ts
 type EventHandler<T = any> = (payload: T) => Promise<void>;
@@ -845,6 +857,8 @@ CREATE INDEX idx_outbox_unpublished ON outbox (created_at) WHERE published = FAL
 
 ### Circuit Breaker [P1]
 
+**Example:** `examples/resilience/circuit-breaker/`
+
 ```ts
 import { CircuitBreakerPolicy, ConsecutiveBreaker, handleAll } from 'cockatiel';
 
@@ -974,6 +988,8 @@ npm install @openfeature/flagd-provider     # flagd (lightweight)
 ```
 
 ### Environment Management [P0]
+
+**Example:** `examples/structure/env-management/`
 
 ```ts
 // config/env.ts
