@@ -32,8 +32,9 @@ export function createExponentialRetry(options: ExponentialRetryOptions): RetryP
     console.log(`  [retry] Attempt ${attempt}, waiting ${delay}ms`);
   });
 
-  policy.onGiveUp(({ error }) => {
-    console.log(`  [retry] Gave up: ${error.message}`);
+  policy.onGiveUp((reason) => {
+    const msg = 'error' in reason ? reason.error.message : `Unexpected value: ${reason.value}`;
+    console.log(`  [retry] Gave up: ${msg}`);
   });
 
   return policy;
